@@ -1,0 +1,54 @@
+BB0
+  : START
+  	.<	_n
+  	=	_i, 0
+BB1
+  : L3
+  	>=	p0, _i, _n
+  	?:=	L4, p0
+BB2
+  	.[]<	_a, _i
+  	=	_s, 0
+  	=	_j, 0
+BB3
+  : L0
+  	>	p0, _j, _i
+  	?:=	L1, p0
+BB4
+  	=[]	t3, _a, _j
+  	+	t4, _s, t3
+  	=	_s, t4
+  	+	t2, _j, 1
+  	=	_j, t2
+  	:=	L0
+BB5
+  : L1
+  	%	t5, _n, 2
+  	!=	p0, t5, 0
+  	?:=	L2, p0
+BB6
+  	.>	_s
+BB7
+  : L2
+  	+	t0, _i, 1
+  	=	_i, t0
+  	:=	L3
+BB8
+  : L4
+  	.>	_n
+
+
+EDGE 0: BB0 -> BB1
+EDGE 1: BB1 -> BB2
+EDGE 2: BB1 -> BB8
+EDGE 3: BB2 -> BB3
+EDGE 4: BB3 -> BB4
+EDGE 5: BB3 -> BB5
+EDGE 6: BB4 -> BB3
+EDGE 7: BB5 -> BB6
+EDGE 8: BB5 -> BB7
+EDGE 9: BB6 -> BB7
+EDGE 10: BB7 -> BB1
+
+LOOP 0: BB1 BB2 BB3 BB4 BB5 BB6 BB7 
+LOOP 1: BB3 BB4 

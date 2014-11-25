@@ -1,13 +1,3 @@
-/*
-CS 201 Spring 2014
-Name: Masruba Tasnim
-Student ID: 861131827
-Email: mtasn001@ucr.edu
-
-Name: Mohiuddin Abdul Qader
-Student ID: 861131839
-Email: mabdu002@ucr.edu
-*/
 #include <stdio.h>
 #include <iostream>
 #include <vector>
